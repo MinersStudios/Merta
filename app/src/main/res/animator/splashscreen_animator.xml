@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objectAnimator
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+    android:duration="@integer/splash_screen_animation_duration"
+    android:repeatCount="-1"
+    android:repeatMode="reverse">
+
+    <propertyValuesHolder
+        android:propertyName="scaleX"
+        android:valueFrom="1.5"
+        android:valueTo="2" />
+
+    <propertyValuesHolder
+        android:propertyName="scaleY"
+        android:valueFrom="1.5"
+        android:valueTo="2" />
+
+    <propertyValuesHolder
+        android:propertyName="translateY"
+        android:valueFrom="46"
+        android:valueTo="40" />
+
+    <propertyValuesHolder
+        android:propertyName="translateX"
+        android:valueFrom="46"
+        android:valueTo="40" />
+
+</objectAnimator>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MenuTitle"> <!-- There is no presentable title in the bottom navigation bar -->
+
+    <item
+        android:id="@id/nav_home"
+        android:icon="@drawable/ic_home"
+        app:buttonIcon="@drawable/ic_settings"
+        app:buttonHandler=".ui.button.handler.SettingsButtonHandler" />
+
+    <item
+        android:id="@id/nav_products"
+        android:icon="@drawable/ic_products"
+        app:buttonIcon="@drawable/ic_add"
+        app:buttonHandler=".ui.button.handler.AddProductButtonHandler" />
+
+    <item
+        android:id="@id/nav_people"
+        android:icon="@drawable/ic_people"
+        app:buttonIcon="@drawable/ic_add"
+        app:buttonHandler=".ui.button.handler.PeopleButtonHandler" />
+
+</menu>

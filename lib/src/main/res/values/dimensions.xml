@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Start BottomNavBar -->
+
+    <dimen name="bnb_bar_radius">100dp</dimen>
+    <dimen name="bnb_bar_padding">5dp</dimen>
+    <dimen name="bnb_indicator_radius">@dimen/bnb_bar_radius</dimen>
+    <dimen name="bnb_icon_size">25dp</dimen>
+
+    <!-- End BottomNavBar -->
+
+    <!-- Start ActionButton -->
+
+    <dimen name="action_button_size">84dp</dimen>
+    <dimen name="action_button_border_width">0dp</dimen>
+    <dimen name="action_button_icon_size">25dp</dimen>
+
+    <!-- End ActionButton -->
+</resources>

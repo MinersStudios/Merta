@@ -1,0 +1,6 @@
+* text=auto eol=lf encoding=UTF-8
+
+*.bat text eol=crlf
+*.sh text eol=lf
+*.jar binary
+*.png binary

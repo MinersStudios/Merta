@@ -1,0 +1,1 @@
+-keep class com.minersstudios.genero.ui.button.handler.*

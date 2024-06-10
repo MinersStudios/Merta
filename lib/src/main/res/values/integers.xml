@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Start BottomNavBar -->
+
+    <integer name="bnb_animation_duration">250</integer>
+
+    <!-- End BottomNavBar -->
+
+    <!-- Start ActionButton -->
+
+    <integer name="action_button_animation_duration">400</integer>
+
+    <!-- End ActionButton -->
+</resources>

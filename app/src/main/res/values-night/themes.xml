@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Genero" parent="Theme.Genero.Base">
+        <item name="android:colorBackground">#111111</item>
+        <item name="colorSurface">#111111</item>
+        <item name="colorPrimary">#1C1C1C</item>
+        <item name="colorPrimaryVariant">#191919</item>
+        <item name="colorOnPrimary">#EAEAEA</item>
+        <item name="colorSecondary">#fff</item>
+        <item name="colorSecondaryVariant">#E1E1E1</item>
+        <item name="colorOnSecondary">#A1A1A1</item>
+        <item name="colorIconFill">#fff</item>
+    </style>
+
+</resources>

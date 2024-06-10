@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Genero.Base" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="preferenceTheme">@style/Theme.Genero.Preference</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <item name="android:windowLightNavigationBar">?attr/isLightTheme</item>
+    </style>
+
+    <style name="Theme.Genero" parent="Theme.Genero.Base">
+        <item name="android:colorBackground">#fff</item>
+        <item name="colorSurface">#fff</item>
+        <item name="colorPrimary">#E1E1E1</item>
+        <item name="colorPrimaryVariant">#A1A1A1</item>
+        <item name="colorOnPrimary">#7A7A7A</item>
+        <item name="colorSecondary">#111111</item>
+        <item name="colorSecondaryVariant">#111111</item>
+        <item name="colorOnSecondary">#111111</item>
+        <item name="colorIconFill">#111111</item>
+    </style>
+
+    <!-- Start Preference -->
+
+    <style name="Theme.Genero.Preference" parent="PreferenceThemeOverlay">
+        <item name="preferenceStyle">@style/Preference.Genero</item>
+        <item name="dialogPreferenceStyle">@style/Preference.Dialog.Genero</item>
+        <item name="checkBoxPreferenceStyle">@style/Preference.CheckBox.Genero</item>
+        <item name="editTextPreferenceStyle">@style/Preference.Dialog.EditText.Genero</item>
+        <item name="preferenceCategoryStyle">@style/Preference.Category.Genero</item>
+        <item name="switchPreferenceStyle">@style/Preference.Switch.Genero</item>
+        <item name="switchPreferenceCompatStyle">@style/Preference.Switch.Genero</item>
+        <item name="preferenceFragmentStyle">@style/Preference.Fragment.Genero</item>
+        <item name="preferenceFragmentCompatStyle">@style/Preference.Fragment.Genero</item>
+    </style>
+
+    <style name="Preference.Category.Genero" parent="Preference.Category.Material">
+        <item name="android:layout">@layout/widget_preference_category</item>
+        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
+    </style>
+
+    <style name="Preference.Genero" parent="Preference.Material">
+        <item name="android:layout">@layout/widget_preference</item>
+        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
+    </style>
+
+    <style name="Preference.Dialog.Genero" parent="Preference.DialogPreference.Material">
+        <item name="android:layout">@layout/widget_preference</item>
+        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
+    </style>
+
+    <style name="Preference.CheckBox.Genero" parent="Preference.CheckBoxPreference.Material">
+        <item name="android:layout">@layout/widget_preference</item>
+        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
+    </style>
+
+    <style name="Preference.Dialog.EditText.Genero" parent="Preference.DialogPreference.EditTextPreference.Material">
+        <item name="android:layout">@layout/widget_preference</item>
+        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
+    </style>
+
+    <style name="Preference.Switch.Genero" parent="Preference.SwitchPreferenceCompat.Material">
+        <item name="android:layout">@layout/widget_preference</item>
+        <item name="android:widgetLayout">@layout/widget_preference_switch</item>
+        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
+    </style>
+
+    <style name="Preference.Fragment.Genero" parent="PreferenceFragment.Material">
+        <item name="allowDividerAfterLastItem">false</item>
+        <item name="android:divider">@null</item>
+    </style>
+
+    <!-- End Preference -->
+
+</resources>

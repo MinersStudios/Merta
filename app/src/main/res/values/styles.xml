@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Genero.Widget.BottomNavBar" parent="Base.Genero.Widget.BottomNavBar">
+        <item name="barColor">@color/bnb_bar</item>
+        <item name="indicatorColor">@color/bnb_indicator</item>
+    </style>
+
+    <style name="Genero.Widget.ActionButton" parent="Base.Genero.Widget.ActionButton">
+        <item name="color">@color/action_button_background</item>
+        <item name="rippleColor">@color/action_button_ripple</item>
+        <item name="icon">@drawable/ic_add</item>
+        <item name="iconTint">@color/action_button_icon</item>
+    </style>
+
+    <style name="Genero.Widget.CollapsingToolbarLayout" parent="Widget.Material3.CollapsingToolbar.Large">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="titleCollapseMode">fade</item>
+        <item name="layout_scrollFlags">scroll|exitUntilCollapsed|snap</item>
+        <item name="expandedTitleMarginStart">@dimen/ctl_title_margin</item>
+        <item name="expandedTitleMarginEnd">@dimen/ctl_title_margin</item>
+        <item name="expandedTitleMarginBottom">@dimen/ctl_title_margin</item>
+        <item name="expandedTitleMarginTop">@dimen/ctl_title_margin</item>
+    </style>
+
+</resources>

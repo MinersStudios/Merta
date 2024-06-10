@@ -1,0 +1,30 @@
+[versions]
+# libraries
+androidx-appcompat =    "1.7.0"  # AndroidX AppCompat
+androidx-navigation =   "2.7.7"  # AndroidX Navigation
+androidx-preference =   "1.2.1"  # AndroidX Preference
+androidx-splashscreen = "1.0.1"  # AndroidX Splash Screen
+fastutil =              "8.5.13" # Fast Util
+flexbox =               "3.0.0"  # Flexbox Layout
+jetbrains-annotations = "24.1.0" # JetBrains Annotations
+jsr305 =                "3.0.2"  # JSR-305
+material =              "1.12.0" # Material Components
+
+# plugins
+agp = "8.5.0-rc02" # Android Gradle Plugin
+
+[libraries]
+androidx-appcompat =           { group = "androidx.appcompat",          name = "appcompat",           version.ref = "androidx-appcompat" }
+androidx-navigation-fragment = { group = "androidx.navigation",         name = "navigation-fragment", version.ref = "androidx-navigation" }
+androidx-navigation-ui =       { group = "androidx.navigation",         name = "navigation-ui",       version.ref = "androidx-navigation" }
+androidx-preference =          { group = "androidx.preference",         name = "preference",          version.ref = "androidx-preference" }
+androidx-splashscreen =        { group = "androidx.core",               name = "core-splashscreen",   version.ref = "androidx-splashscreen" }
+fastutil =                     { group = "it.unimi.dsi",                name = "fastutil",            version.ref = "fastutil" }
+flexbox =                      { group = "com.google.android.flexbox",  name = "flexbox",             version.ref = "flexbox" }
+jetbrains-annotations =        { group = "org.jetbrains",               name = "annotations",         version.ref = "jetbrains-annotations" }
+jsr305 =                       { group = "com.google.code.findbugs",    name = "jsr305",              version.ref = "jsr305" }
+material =                     { group = "com.google.android.material", name = "material",            version.ref = "material" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library =     { id = "com.android.library",     version.ref = "agp" }

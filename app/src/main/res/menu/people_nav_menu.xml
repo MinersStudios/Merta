@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@id/nav_customers"
+        android:icon="@drawable/ic_customers"
+        android:title="@string/title_customers" />
+
+    <item
+        android:id="@id/nav_mrps"
+        android:icon="@drawable/ic_mrps"
+        android:title="@string/title_mrps" />
+
+</menu>

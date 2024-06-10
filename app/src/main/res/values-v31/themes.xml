@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Genero.Base" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="preferenceTheme">@style/Theme.Genero.Preference</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <item name="android:windowLightNavigationBar">?attr/isLightTheme</item>
+
+        <!-- Start v31 -->
+
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground_animated</item>
+        <item name="android:windowSplashScreenAnimationDuration">@integer/splash_screen_animation_duration</item>
+        <item name="android:windowSplashScreenBackground">?attr/colorSurface</item>
+
+        <!-- End v31 -->
+    </style>
+
+</resources>

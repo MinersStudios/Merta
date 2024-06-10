@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Start BottomNavBar -->
+
+    <color name="bnb_bar">#fff</color>
+    <color name="bnb_indicator">#000</color>
+
+    <!-- End BottomNavBar -->
+
+    <!-- Start ActionButton -->
+
+    <color name="action_button_background">#fff</color>
+    <color name="action_button_ripple">#D3D3D3</color>
+    <color name="action_button_border">#000</color>
+    <color name="action_button_icon">#000</color>
+
+    <!-- End ActionButton -->
+</resources>

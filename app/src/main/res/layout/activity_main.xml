@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/main_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/bottom_navigation"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_app_bar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:measureAllChildren="true"
+        android:paddingHorizontal="@dimen/nav_bar_indent"
+        android:paddingBottom="@dimen/nav_bar_indent">
+
+        <com.minersstudios.genero.lib.ui.navigation.BottomNavBar
+            style="@style/Genero.Widget.BottomNavBar"
+            android:id="@+id/bottom_nav_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/nav_bar_indent"
+            app:menu="@menu/bottom_nav_menu"
+            app:itemSize="@dimen/nav_bar_height"
+            app:layout_constraintEnd_toStartOf="@id/bottom_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.minersstudios.genero.lib.ui.button.ActionButton
+            style="@style/Genero.Widget.ActionButton"
+            android:id="@+id/bottom_button"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:size="@dimen/nav_bar_height"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_nav_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bottom_nav_bar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

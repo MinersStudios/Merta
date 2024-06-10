@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home">Головна</string>
+    <string name="title_products">Товари</string>
+    <string name="title_customers">Замовники</string>
+    <string name="title_mrps">Матеріально відповідальна особа</string>
+    <string name="title_preferences">Налаштування</string>
+</resources>
