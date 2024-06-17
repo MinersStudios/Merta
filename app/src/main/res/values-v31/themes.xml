@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Genero.Base" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="preferenceTheme">@style/Theme.Genero.Preference</item>
+    <style name="Base.Theme.Genero" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="preferenceTheme">@style/Preference.Theme.Genero</item>
         <item name="android:navigationBarColor">?attr/colorSurface</item>
         <item name="android:statusBarColor">?attr/colorSurface</item>
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>

@@ -1,76 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Genero.Base" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="preferenceTheme">@style/Theme.Genero.Preference</item>
+    <style name="Base.Theme.Genero" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="preferenceTheme">@style/Preference.Theme.Genero</item>
         <item name="android:navigationBarColor">?attr/colorSurface</item>
         <item name="android:statusBarColor">?attr/colorSurface</item>
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
         <item name="android:windowLightNavigationBar">?attr/isLightTheme</item>
     </style>
 
-    <style name="Theme.Genero" parent="Theme.Genero.Base">
-        <item name="android:colorBackground">#fff</item>
-        <item name="colorSurface">#fff</item>
-        <item name="colorPrimary">#E1E1E1</item>
-        <item name="colorPrimaryVariant">#A1A1A1</item>
-        <item name="colorOnPrimary">#7A7A7A</item>
-        <item name="colorSecondary">#111111</item>
-        <item name="colorSecondaryVariant">#111111</item>
-        <item name="colorOnSecondary">#111111</item>
-        <item name="colorIconFill">#111111</item>
+    <style name="Theme.Genero" parent="Base.Theme.Genero">
+        <item name="colorIconFill">               @color/theme_primary</item>
+        <item name="colorPrimary">                @color/theme_primary</item>
+        <item name="colorOnPrimary">              @color/theme_onPrimary</item>
+        <item name="colorPrimaryContainer">       @color/theme_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">     @color/theme_onPrimaryContainer</item>
+        <item name="colorPrimaryFixed">           @color/theme_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">         @color/theme_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">        @color/theme_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">  @color/theme_onPrimaryFixedVariant</item>
+        <item name="colorSecondary">              @color/theme_secondary</item>
+        <item name="colorOnSecondary">            @color/theme_onSecondary</item>
+        <item name="colorSecondaryContainer">     @color/theme_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">   @color/theme_onSecondaryContainer</item>
+        <item name="colorSecondaryFixed">         @color/theme_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">       @color/theme_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">      @color/theme_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/theme_onSecondaryFixedVariant</item>
+        <item name="colorTertiary">               @color/theme_tertiary</item>
+        <item name="colorOnTertiary">             @color/theme_onTertiary</item>
+        <item name="colorTertiaryContainer">      @color/theme_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">    @color/theme_onTertiaryContainer</item>
+        <item name="colorTertiaryFixed">          @color/theme_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">        @color/theme_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">       @color/theme_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant"> @color/theme_onTertiaryFixedVariant</item>
+        <item name="colorSurface">                @color/theme_surface</item>
+        <item name="colorOnSurface">              @color/theme_onSurface</item>
+        <item name="colorSurfaceVariant">         @color/theme_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">       @color/theme_onSurfaceVariant</item>
+        <item name="colorSurfaceDim">             @color/theme_surfaceDim</item>
+        <item name="colorSurfaceBright">          @color/theme_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest"> @color/theme_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">    @color/theme_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">       @color/theme_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">   @color/theme_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/theme_surfaceContainerHighest</item>
+        <item name="android:colorBackground">     @color/theme_background</item>
+        <item name="colorOnBackground">           @color/theme_onBackground</item>
+        <item name="colorSurfaceInverse">         @color/theme_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">       @color/theme_inverseOnSurface</item>
+        <item name="colorPrimaryInverse">         @color/theme_inversePrimary</item>
+        <item name="colorOutline">                @color/theme_outline</item>
+        <item name="colorOutlineVariant">         @color/theme_outlineVariant</item>
+        <item name="colorError">                  @color/theme_error</item>
+        <item name="colorOnError">                @color/theme_onError</item>
+        <item name="colorErrorContainer">         @color/theme_errorContainer</item>
+        <item name="colorOnErrorContainer">       @color/theme_onErrorContainer</item>
     </style>
-
-    <!-- Start Preference -->
-
-    <style name="Theme.Genero.Preference" parent="PreferenceThemeOverlay">
-        <item name="preferenceStyle">@style/Preference.Genero</item>
-        <item name="dialogPreferenceStyle">@style/Preference.Dialog.Genero</item>
-        <item name="checkBoxPreferenceStyle">@style/Preference.CheckBox.Genero</item>
-        <item name="editTextPreferenceStyle">@style/Preference.Dialog.EditText.Genero</item>
-        <item name="preferenceCategoryStyle">@style/Preference.Category.Genero</item>
-        <item name="switchPreferenceStyle">@style/Preference.Switch.Genero</item>
-        <item name="switchPreferenceCompatStyle">@style/Preference.Switch.Genero</item>
-        <item name="preferenceFragmentStyle">@style/Preference.Fragment.Genero</item>
-        <item name="preferenceFragmentCompatStyle">@style/Preference.Fragment.Genero</item>
-    </style>
-
-    <style name="Preference.Category.Genero" parent="Preference.Category.Material">
-        <item name="android:layout">@layout/widget_preference_category</item>
-        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
-    </style>
-
-    <style name="Preference.Genero" parent="Preference.Material">
-        <item name="android:layout">@layout/widget_preference</item>
-        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
-    </style>
-
-    <style name="Preference.Dialog.Genero" parent="Preference.DialogPreference.Material">
-        <item name="android:layout">@layout/widget_preference</item>
-        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
-    </style>
-
-    <style name="Preference.CheckBox.Genero" parent="Preference.CheckBoxPreference.Material">
-        <item name="android:layout">@layout/widget_preference</item>
-        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
-    </style>
-
-    <style name="Preference.Dialog.EditText.Genero" parent="Preference.DialogPreference.EditTextPreference.Material">
-        <item name="android:layout">@layout/widget_preference</item>
-        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
-    </style>
-
-    <style name="Preference.Switch.Genero" parent="Preference.SwitchPreferenceCompat.Material">
-        <item name="android:layout">@layout/widget_preference</item>
-        <item name="android:widgetLayout">@layout/widget_preference_switch</item>
-        <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
-    </style>
-
-    <style name="Preference.Fragment.Genero" parent="PreferenceFragment.Material">
-        <item name="allowDividerAfterLastItem">false</item>
-        <item name="android:divider">@null</item>
-    </style>
-
-    <!-- End Preference -->
 
 </resources>

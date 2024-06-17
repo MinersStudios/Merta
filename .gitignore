@@ -17,10 +17,13 @@ output.json
 
 # IntelliJ
 *.iml
-.idea/
+.idea/*
 misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
+
+# IntelliJ project icon
+!.idea/icon.svg
 
 # Keystore files
 *.jks

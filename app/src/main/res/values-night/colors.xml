@@ -1,20 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Launcher Icon -->
+
     <color name="ic_launcher_background">#000</color>
-    <color name="ic_launcher_foreground">#fff</color>
+    <color name="ic_launcher_foreground">#FFF</color>
 
-    <!-- Start BottomNavBar -->
+    <!-- ActionButton -->
 
-    <color name="bnb_bar">#2F2F2F</color>
-    <color name="bnb_indicator">#E1E1E1</color>
-
-    <!-- End BottomNavBar -->
-
-    <!-- Start ActionButton -->
-
-    <color name="action_button_background">@color/bnb_bar</color>
     <color name="action_button_ripple">#424242</color>
-    <color name="action_button_icon">@color/bnb_indicator</color>
 
-    <!-- End ActionButton -->
+    <!-- Theme -->
+
+    <color name="theme_primary">                #C8C6C5</color>
+    <color name="theme_onPrimary">              #313030</color>
+    <color name="theme_primaryContainer">       #0B0B0B</color>
+    <color name="theme_onPrimaryContainer">     #9D9B9A</color>
+    <color name="theme_primaryFixed">           #E5E2E1</color>
+    <color name="theme_onPrimaryFixed">         #1C1B1B</color>
+    <color name="theme_primaryFixedDim">        #C8C6C5</color>
+    <color name="theme_onPrimaryFixedVariant">  #474646</color>
+    <color name="theme_secondary">              #C9C6C5</color>
+    <color name="theme_onSecondary">            #313030</color>
+    <color name="theme_secondaryContainer">     #3E3D3D</color>
+    <color name="theme_onSecondaryContainer">   #D3D0D0</color>
+    <color name="theme_secondaryFixed">         #E5E2E1</color>
+    <color name="theme_onSecondaryFixed">       #1C1B1B</color>
+    <color name="theme_secondaryFixedDim">      #C9C6C5</color>
+    <color name="theme_onSecondaryFixedVariant">#484646</color>
+    <color name="theme_tertiary">               #CAC5C5</color>
+    <color name="theme_onTertiary">             #323030</color>
+    <color name="theme_tertiaryContainer">      #0C0B0B</color>
+    <color name="theme_onTertiaryContainer">    #9E9B9A</color>
+    <color name="theme_tertiaryFixed">          #E6E1E1</color>
+    <color name="theme_onTertiaryFixed">        #1C1B1B</color>
+    <color name="theme_tertiaryFixedDim">       #CAC5C5</color>
+    <color name="theme_onTertiaryFixedVariant"> #484646</color>
+    <color name="theme_surface">                #141313</color>
+    <color name="theme_onSurface">              #E5E2E1</color>
+    <color name="theme_surfaceVariant">         #444748</color>
+    <color name="theme_onSurfaceVariant">       #C4C7C7</color>
+    <color name="theme_surfaceDim">             #141313</color>
+    <color name="theme_surfaceBright">          #3A3939</color>
+    <color name="theme_surfaceContainerLowest"> #0E0E0E</color>
+    <color name="theme_surfaceContainerLow">    #1C1B1B</color>
+    <color name="theme_surfaceContainer">       #201F1F</color>
+    <color name="theme_surfaceContainerHigh">   #2B2A2A</color>
+    <color name="theme_surfaceContainerHighest">#353434</color>
+    <color name="theme_background">             #141313</color>
+    <color name="theme_onBackground">           #E5E2E1</color>
+    <color name="theme_inverseSurface">         #E5E2E1</color>
+    <color name="theme_inverseOnSurface">       #313030</color>
+    <color name="theme_inversePrimary">         #5F5E5E</color>
+    <color name="theme_outline">                #8E9192</color>
+    <color name="theme_outlineVariant">         #444748</color>
+    <color name="theme_error">                  #FFB4AB</color>
+    <color name="theme_onError">                #690005</color>
+    <color name="theme_errorContainer">         #93000A</color>
+    <color name="theme_onErrorContainer">       #FFDAD6</color>
 </resources>

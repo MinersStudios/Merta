@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Switch -->
+
+    <macro name="switch_selected_handle_color">?attr/colorOnPrimary</macro>
+    <macro name="switch_unselected_handle_color">?attr/colorOutline</macro>
+    <macro name="switch_disabled_selected_handle_color">?attr/colorSurface</macro>
+    <macro name="switch_disabled_unselected_handle_color">?attr/colorOnSurface</macro>
+</resources>

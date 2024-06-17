@@ -650,27 +650,29 @@ public class BottomNavBar extends View {
     @SuppressWarnings("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(final @NonNull MotionEvent event) {
-        switch (event.getAction()) {
-            case ACTION_DOWN:
-                this.performHapticFeedback(0);
+        final int x = (int) event.getX();
+        final int y = (int) event.getY();
 
-                return true;
-            case ACTION_UP:
-                final float x = event.getX();
-                final float y = event.getY();
+        if (this.barRect.contains(x, y)) {
+            switch (event.getAction()) {
+                case ACTION_DOWN:
+                    this.performHapticFeedback(0);
 
-                for (int i = 0; i < this.itemList.size(); ++i) {
-                    if (this.itemList.get(i).contains(x, y)) {
-                        this.selectItem(i);
-                        this.playSoundEffect(SoundEffectConstants.CLICK);
+                    return true;
+                case ACTION_UP:
+                    for (int i = 0; i < this.itemList.size(); ++i) {
+                        if (this.itemList.get(i).contains(x, y)) {
+                            this.selectItem(i);
+                            this.playSoundEffect(SoundEffectConstants.CLICK);
 
-                        break;
+                            break;
+                        }
                     }
-                }
-                // Fall through
-            default:
-                return super.onTouchEvent(event);
+                    // Fall through
+            }
         }
+
+        return super.onTouchEvent(event);
     }
 
     @Override

@@ -11,7 +11,7 @@ jsr305 =                "3.0.2"  # JSR-305
 material =              "1.12.0" # Material Components
 
 # plugins
-agp = "8.5.0-rc02" # Android Gradle Plugin
+agp = "8.5.0" # Android Gradle Plugin
 
 [libraries]
 androidx-appcompat =           { group = "androidx.appcompat",          name = "appcompat",           version.ref = "androidx-appcompat" }

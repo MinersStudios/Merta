@@ -1,1 +1,1 @@
--keep class com.minersstudios.genero.ui.button.handler.*
+-keep class com.minersstudios.genero.app.ui.button.handler.*

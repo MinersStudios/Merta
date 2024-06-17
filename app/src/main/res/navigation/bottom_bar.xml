@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.minersstudios.genero.app.ui.navigation.home.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_products"
+        android:name="com.minersstudios.genero.app.ui.navigation.products.ProductsFragment"
+        tools:layout="@layout/fragment_products" />
+
+    <fragment
+        android:id="@+id/nav_people"
+        android:name="com.minersstudios.genero.app.ui.navigation.people.PeopleFragment"
+        tools:layout="@layout/fragment_people" />
+
+</navigation>

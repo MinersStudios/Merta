@@ -18,7 +18,7 @@ dependencies {
 
 android {
     defaultConfig {
-        namespace   = "com.minersstudios.genero"
+        namespace   = "com.minersstudios.genero.app"
         versionName = "1.0.0"
         versionCode = 1
         compileSdk  = 34

@@ -3,10 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24"
+    android:viewportWidth="28"
+    android:viewportHeight="28"
     android:autoMirrored="true">
-    <path
-        android:fillColor="?attr/colorIconFill"
-        android:pathData="M17.92 1.5a1.5 1.5 0 0 1-.44 1.06l-7.67 7.68a2.5 2.5 0 0 0 0 3.53l7.66 7.67a1.5 1.5 0 0 1-2.12 2.12L7.69 15.9a5.5 5.5 0 0 1 0-7.78L15.36.44a1.5 1.5 0 0 1 2.56 1.06Z" />
+
+    <group
+        android:name="logoGroup"
+        android:translateX="2"
+        android:translateY="2">
+        <path
+            android:fillColor="?attr/colorIconFill"
+            android:pathData="M17.92 1.5a1.5 1.5 0 0 1-.44 1.06l-7.67 7.68a2.5 2.5 0 0 0 0 3.53l7.66 7.67a1.5 1.5 0 0 1-2.12 2.12L7.69 15.9a5.5 5.5 0 0 1 0-7.78L15.36.44a1.5 1.5 0 0 1 2.56 1.06Z" />
+    </group>
+
 </vector>

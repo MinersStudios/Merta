@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/bottom_navigation"
+        app:navGraph="@navigation/bottom_bar"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +31,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/nav_bar_indent"
-            app:menu="@menu/bottom_nav_menu"
+            app:menu="@menu/nav_bottom_bar"
             app:itemSize="@dimen/nav_bar_height"
             app:layout_constraintEnd_toStartOf="@id/bottom_button"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Start Navigation Bar -->
+    <!-- Switch -->
+
+    <dimen name="switch_disabled_selected_handle_opacity">0.38</dimen>
+    <dimen name="switch_disabled_unselected_handle_opacity">0.38</dimen>
+
+    <!-- Navigation Bar -->
 
     <dimen name="nav_bar_bottom_padding_large">21dp</dimen>
     <dimen name="nav_bar_bottom_padding_small">10dp</dimen>
     <dimen name="nav_bar_height">84dp</dimen>
     <dimen name="nav_bar_indent">21dp</dimen>
 
-    <!-- End Navigation Bar -->
-
-    <!-- Start CollapsingToolbarLayout -->
+    <!-- Collapsing Toolbar Layout -->
 
     <dimen name="ctl_title_margin">20dp</dimen>
 
-    <!-- End CollapsingToolbarLayout -->
-
-    <!-- Start Preferences -->
+    <!-- Preferences -->
 
     <dimen name="preferences_status_bar_default_top_padding">24dp</dimen>
     <dimen name="preferences_ctl_height">164dp</dimen>
@@ -25,6 +26,4 @@
     <dimen name="preference_category_margin_bottom">10dp</dimen>
     <dimen name="preference_padding_vertical">8dp</dimen>
     <dimen name="preference_padding_horizontal">24dp</dimen>
-
-    <!-- End Preferences -->
 </resources>
