@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 
 import com.minersstudios.genero.lib.ui.button.ActionButton;
 import com.minersstudios.genero.lib.ui.button.ButtonHandler;
-import com.minersstudios.genero.app.ui.PreferencesActivity;
+import com.minersstudios.genero.app.ui.preferences.PreferencesActivity;
 
 public class SettingsButtonHandler implements ButtonHandler {
 

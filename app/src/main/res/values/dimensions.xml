@@ -7,10 +7,10 @@
 
     <!-- Navigation Bar -->
 
-    <dimen name="nav_bar_bottom_padding_large">21dp</dimen>
+    <dimen name="nav_bar_bottom_padding_large">20dp</dimen>
     <dimen name="nav_bar_bottom_padding_small">10dp</dimen>
     <dimen name="nav_bar_height">84dp</dimen>
-    <dimen name="nav_bar_indent">21dp</dimen>
+    <dimen name="nav_bar_indent">20dp</dimen>
 
     <!-- Collapsing Toolbar Layout -->
 
