@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Service strings -->
+
+    <string translatable="false" name="key_about">about</string>
+    <string translatable="false" name="key_app_name">app_name</string>
+    <string translatable="false" name="key_app_version">app_version</string>
+    <string translatable="false" name="key_app_build_type">build_type</string>
+
+    <!-- App strings -->
+
     <string name="app_name" translatable="false">Genero</string>
     <string name="title_home">Home</string>
     <string name="title_products">Products</string>
     <string name="title_customers">Customers</string>
     <string name="title_mrps">Materially responsible people</string>
     <string name="title_preferences">Preferences</string>
+    <string name="title_app_name">App name</string>
+    <string name="title_app_version">Version</string>
+    <string name="title_build_type">Build type</string>
+    <string name="title_links">Links</string>
+    <string name="title_github" translatable="false">GitHub</string>
+    <string name="title_website">Website</string>
+    <string name="title_about">About</string>
+    <string name="summary_about">Information about the application</string>
+    <string name="unknown_version">Unknown version</string>
 </resources>

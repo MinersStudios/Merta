@@ -5,4 +5,12 @@
     <string name="title_customers">Замовники</string>
     <string name="title_mrps">Матеріально відповідальна особа</string>
     <string name="title_preferences">Налаштування</string>
+    <string name="title_app_name">Назва додатка</string>
+    <string name="title_app_version">Версія</string>
+    <string name="title_build_type">Тип збірки</string>
+    <string name="title_links">Посилання</string>
+    <string name="title_website">Веб-сайт</string>
+    <string name="title_about">Про додаток</string>
+    <string name="summary_about">Інформація про додаток</string>
+    <string name="unknown_version">Невідома версія</string>
 </resources>

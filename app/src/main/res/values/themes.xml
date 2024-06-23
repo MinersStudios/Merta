@@ -10,7 +10,7 @@
     </style>
 
     <style name="Theme.Genero" parent="Base.Theme.Genero">
-        <item name="colorIconFill">               @color/theme_primary</item>
+        <item name="colorIconTint">               @color/theme_primary</item>
         <item name="colorPrimary">                @color/theme_primary</item>
         <item name="colorOnPrimary">              @color/theme_onPrimary</item>
         <item name="colorPrimaryContainer">       @color/theme_primaryContainer</item>

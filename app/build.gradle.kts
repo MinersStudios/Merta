@@ -30,6 +30,10 @@ android {
         )
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     buildTypes {
         release {
             isDebuggable      = false

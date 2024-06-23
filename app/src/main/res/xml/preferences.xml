@@ -1,56 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
-        app:key="category1"
-        app:title="Category 1">
-
-        <Preference
-            app:key="setting1"
-            app:summary="Summary for Setting 1"
-            app:title="Setting 1" />
-
-        <EditTextPreference
-            app:key="setting2"
-            app:summary="Summary for Setting 2"
-            app:title="Setting 2" />
-
-        <SwitchPreferenceCompat
-            app:key="setting3"
-            app:summary="Summary for Setting 3"
-            app:title="Setting 3" />
-
-        <CheckBoxPreference
-            app:key="setting4"
-            app:summary="Summary for Setting 4"
-            app:title="Setting 4" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        app:key="category2"
-        app:title="Category 2">
-
-        <Preference
-            app:key="setting5"
-            app:summary="Summary for Setting 5"
-            app:title="Setting 5" />
-
-        <EditTextPreference
-            app:key="setting6"
-            app:summary="Summary for Setting 6"
-            app:title="Setting 6" />
-
-        <SwitchPreferenceCompat
-            app:key="setting7"
-            app:summary="Summary for Setting 7"
-            app:title="Setting 7" />
-
-        <CheckBoxPreference
-            app:key="setting8"
-            app:summary="Summary for Setting 8"
-            app:title="Setting 8" />
-
-    </PreferenceCategory>
+    <Preference
+        android:key="@string/key_about"
+        android:icon="@drawable/ic_info"
+        android:title="@string/title_about"
+        android:summary="@string/summary_about" />
 
 </PreferenceScreen>

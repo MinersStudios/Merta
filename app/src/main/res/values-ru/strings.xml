@@ -5,4 +5,12 @@
     <string name="title_customers">Заказчики</string>
     <string name="title_mrps">Материально ответственные люди</string>
     <string name="title_preferences">Настройки</string>
+    <string name="title_app_name">Имя приложения</string>
+    <string name="title_app_version">Версия</string>
+    <string name="title_build_type">Тип сборки</string>
+    <string name="title_links">Ссылки</string>
+    <string name="title_website">Веб-сайт</string>
+    <string name="title_about">О приложении</string>
+    <string name="summary_about">Информация о приложении</string>
+    <string name="unknown_version">Неизвестная версия</string>
 </resources>

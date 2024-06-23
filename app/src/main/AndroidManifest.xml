@@ -28,7 +28,16 @@
 
         </activity>
 
-        <activity android:name=".ui.preferences.PreferencesActivity" />
+        <activity
+            android:name=".ui.preferences.PreferencesActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
 
     </application>
 

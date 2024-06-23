@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="@string/key_app_name"
+        android:icon="@drawable/ic_widgets"
+        android:title="@string/title_app_name"
+        android:summary="@string/app_name" />
+
+    <Preference
+        android:key="@string/key_app_version"
+        android:icon="@drawable/ic_conversion_path"
+        android:summary="@string/unknown_version"
+        android:title="@string/title_app_version" />
+
+    <Preference
+        android:key="@string/key_app_build_type"
+        android:icon="@drawable/ic_cookie"
+        android:title="@string/title_build_type"
+        android:summary="@string/unknown_version" />
+
+    <PreferenceCategory android:title="@string/title_links">
+
+        <Preference
+            android:icon="@drawable/ic_website"
+            android:title="@string/title_website">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://minersstudios.com" />
+
+        </Preference>
+
+        <Preference
+            android:icon="@drawable/ic_github"
+            android:title="@string/title_github">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://minersstudios.com/github/Genero" />
+
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
