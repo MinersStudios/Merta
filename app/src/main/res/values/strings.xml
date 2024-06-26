@@ -5,7 +5,7 @@
     <string translatable="false" name="key_about">about</string>
     <string translatable="false" name="key_app_name">app_name</string>
     <string translatable="false" name="key_app_version">app_version</string>
-    <string translatable="false" name="key_app_build_type">build_type</string>
+    <string translatable="false" name="key_app_build_type">app_build_type</string>
 
     <!-- App strings -->
 
@@ -23,5 +23,5 @@
     <string name="title_website">Website</string>
     <string name="title_about">About</string>
     <string name="summary_about">Information about the application</string>
-    <string name="unknown_version">Unknown version</string>
+    <string name="unknown">Unknown</string>
 </resources>

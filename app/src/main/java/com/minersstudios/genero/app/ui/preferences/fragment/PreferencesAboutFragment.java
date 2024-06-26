@@ -6,21 +6,21 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
 
 import com.minersstudios.genero.app.R;
 
 public class PreferencesAboutFragment extends AbstractPreferencesFragment {
 
-    @Override
-    public @NonNull PreferenceFragmentCompat getPreferenceFragment() {
-        this.setTitle(R.string.title_about);
-
-        return new Preferences();
+    public PreferencesAboutFragment() {
+        super(R.string.title_about);
     }
 
-    public static final class Preferences extends PreferenceFragmentCompat {
+    @Override
+    public @NonNull PreferencesContainer initContainer() {
+        return new Container();
+    }
+
+    public static final class Container extends PreferencesContainer {
 
         @Override
         public void onCreatePreferences(
@@ -29,16 +29,14 @@ public class PreferencesAboutFragment extends AbstractPreferencesFragment {
         ) {
             this.setPreferencesFromResource(R.xml.preferences_about, rootKey);
 
-            final Preference version = this.findPreference(this.getString(R.string.key_app_version));
-            final Preference buildType = this.findPreference(this.getString(R.string.key_app_build_type));
-
-            if (version != null) {
-                version.setSummary(VERSION_NAME + " (" + VERSION_CODE + ")");
-            }
-
-            if (buildType != null) {
-                buildType.setSummary(BUILD_TYPE);
-            }
+            this.runOnFind(
+                    R.string.key_app_version,
+                    preference -> preference.setSummary(VERSION_NAME + " (" + VERSION_CODE + ")")
+            );
+            this.runOnFind(
+                    R.string.key_app_build_type,
+                    preference -> preference.setSummary(BUILD_TYPE)
+            );
         }
     }
 }

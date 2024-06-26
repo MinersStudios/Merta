@@ -6,20 +6,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
 
 import com.minersstudios.genero.app.R;
 
 public class PreferencesFragment extends AbstractPreferencesFragment {
 
-    @Override
-    public @NonNull PreferenceFragmentCompat getPreferenceFragment() {
-        this.setTitle(R.string.title_preferences);
-
-        return new Preferences();
+    public PreferencesFragment() {
+        super(R.string.title_preferences);
     }
 
-    public static final class Preferences extends PreferenceFragmentCompat {
+    @Override
+    public @NonNull PreferencesContainer initContainer() {
+        return new Container();
+    }
+
+    public static final class Container extends PreferencesContainer {
         private String keyAbout;
 
         @Override
@@ -35,20 +36,24 @@ public class PreferencesFragment extends AbstractPreferencesFragment {
         @Override
         public boolean onPreferenceTreeClick(final @NonNull Preference preference) {
             final String key = preference.getKey();
+
+            if (key == null) {
+                return super.onPreferenceTreeClick(preference);
+            }
+
             final Fragment fragment;
 
-            if (key.equals(this.keyAbout)) {
+            if (this.keyAbout.equals(key)) {
                 fragment = new PreferencesAboutFragment();
             } else {
                 fragment = null;
             }
 
             if (fragment != null) {
-                this.requireActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .addToBackStack(String.valueOf(System.currentTimeMillis()))
-                .replace(R.id.main_container, new PreferencesAboutFragment())
-                .commit();
+                this.performTransaction(
+                        R.id.main_container,
+                        fragment
+                );
             }
 
             return super.onPreferenceTreeClick(preference);

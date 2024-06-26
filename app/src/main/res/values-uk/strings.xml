@@ -12,5 +12,5 @@
     <string name="title_website">Веб-сайт</string>
     <string name="title_about">Про додаток</string>
     <string name="summary_about">Інформація про додаток</string>
-    <string name="unknown_version">Невідома версія</string>
+    <string name="unknown">Невідомо</string>
 </resources>

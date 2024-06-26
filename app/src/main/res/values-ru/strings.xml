@@ -12,5 +12,5 @@
     <string name="title_website">Веб-сайт</string>
     <string name="title_about">О приложении</string>
     <string name="summary_about">Информация о приложении</string>
-    <string name="unknown_version">Неизвестная версия</string>
+    <string name="unknown">Неизвестно</string>
 </resources>

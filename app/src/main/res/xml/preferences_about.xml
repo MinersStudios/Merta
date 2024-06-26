@@ -10,14 +10,14 @@
     <Preference
         android:key="@string/key_app_version"
         android:icon="@drawable/ic_conversion_path"
-        android:summary="@string/unknown_version"
+        android:summary="@string/unknown"
         android:title="@string/title_app_version" />
 
     <Preference
         android:key="@string/key_app_build_type"
         android:icon="@drawable/ic_cookie"
         android:title="@string/title_build_type"
-        android:summary="@string/unknown_version" />
+        android:summary="@string/unknown" />
 
     <PreferenceCategory android:title="@string/title_links">
 
