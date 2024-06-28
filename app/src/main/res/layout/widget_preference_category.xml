@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/preference_category_margin_top"
@@ -18,7 +19,8 @@
         android:textStyle="bold"
         android:textAlignment="viewStart"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="?android:attr/textColorPrimary" />
+        android:textColor="?android:attr/textColorPrimary"
+        tools:text="Title text" />
 
     <TextView
         android:id="@android:id/summary"
@@ -30,6 +32,7 @@
         android:textColor="?android:attr/textColorSecondary"
         android:maxLines="10"
         android:singleLine="true"
-        android:ellipsize="end" />
+        android:ellipsize="end"
+        tools:text="Summary text" />
 
 </LinearLayout>

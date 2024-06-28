@@ -7,21 +7,28 @@
     android:tint="?attr/colorIconTint">
 
     <path
-        android:pathData="M3,12a9,9 0,1 0,18 0a9,9 0,0 0,-18 0"
+        android:pathData="M12,3l8,4.5l0,9l-8,4.5l-8,-4.5l0,-9l8,-4.5"
         android:strokeLineJoin="round"
         android:strokeWidth="2"
         android:strokeColor="@android:color/white"
         android:strokeLineCap="round" />
 
     <path
-        android:pathData="M12,9h0.01"
+        android:pathData="M12,12l8,-4.5"
         android:strokeLineJoin="round"
         android:strokeWidth="2"
         android:strokeColor="@android:color/white"
         android:strokeLineCap="round" />
 
     <path
-        android:pathData="M11,12h1v4h1"
+        android:pathData="M12,12l0,9"
+        android:strokeLineJoin="round"
+        android:strokeWidth="2"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round" />
+
+    <path
+        android:pathData="M12,12l-8,-4.5"
         android:strokeLineJoin="round"
         android:strokeWidth="2"
         android:strokeColor="@android:color/white"

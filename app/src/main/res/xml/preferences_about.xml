@@ -3,7 +3,7 @@
 
     <Preference
         android:key="@string/key_app_name"
-        android:icon="@drawable/ic_widgets"
+        android:icon="@drawable/ic_box"
         android:title="@string/title_app_name"
         android:summary="@string/app_name" />
 
@@ -18,6 +18,12 @@
         android:icon="@drawable/ic_cookie"
         android:title="@string/title_build_type"
         android:summary="@string/unknown" />
+
+    <Preference
+        android:key="@string/key_app_license"
+        android:icon="@drawable/ic_scale"
+        android:title="@string/title_license"
+        android:summary="@string/summary_license" />
 
     <PreferenceCategory android:title="@string/title_links">
 

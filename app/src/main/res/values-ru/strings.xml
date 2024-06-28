@@ -10,7 +10,10 @@
     <string name="title_build_type">Тип сборки</string>
     <string name="title_links">Ссылки</string>
     <string name="title_website">Веб-сайт</string>
+    <string name="title_appearance">Внешний вид</string>
     <string name="title_about">О приложении</string>
+    <string name="title_license">Лицензия</string>
+    <string name="summary_appearance">Настройки внешнего вида приложения</string>
     <string name="summary_about">Информация о приложении</string>
     <string name="unknown">Неизвестно</string>
 </resources>

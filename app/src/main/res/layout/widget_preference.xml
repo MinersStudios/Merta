@@ -54,7 +54,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="?android:attr/textColorSecondary"
             android:maxLines="4"
-            tools:text="Summary description" />
+            tools:text="Summary text" />
 
     </RelativeLayout>
 

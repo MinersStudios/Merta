@@ -22,6 +22,7 @@ public class PreferencesFragment extends AbstractPreferencesFragment {
 
     public static final class Container extends PreferencesContainer {
         private String keyAbout;
+        private String keyAppearance;
 
         @Override
         public void onCreatePreferences(
@@ -30,7 +31,8 @@ public class PreferencesFragment extends AbstractPreferencesFragment {
         ) {
             this.setPreferencesFromResource(R.xml.preferences, rootKey);
 
-            this.keyAbout = this.getString(R.string.key_about);
+            this.keyAbout      = this.getString(R.string.key_about);
+            this.keyAppearance = this.getString(R.string.key_appearance);
         }
 
         @Override
@@ -45,6 +47,8 @@ public class PreferencesFragment extends AbstractPreferencesFragment {
 
             if (this.keyAbout.equals(key)) {
                 fragment = new PreferencesAboutFragment();
+            } else if (this.keyAppearance.equals(key)) {
+                fragment = new PreferencesAppearanceFragment();
             } else {
                 fragment = null;
             }

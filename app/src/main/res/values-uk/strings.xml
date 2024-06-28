@@ -10,7 +10,10 @@
     <string name="title_build_type">Тип збірки</string>
     <string name="title_links">Посилання</string>
     <string name="title_website">Веб-сайт</string>
+    <string name="title_appearance">Зовнішній вигляд</string>
     <string name="title_about">Про додаток</string>
+    <string name="title_license">Ліцензія</string>
+    <string name="summary_appearance">Налаштування зовнішнього вигляду додатка</string>
     <string name="summary_about">Інформація про додаток</string>
     <string name="unknown">Невідомо</string>
 </resources>

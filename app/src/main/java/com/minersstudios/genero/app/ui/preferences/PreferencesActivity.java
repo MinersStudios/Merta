@@ -12,14 +12,17 @@ import com.minersstudios.genero.app.ui.preferences.fragment.PreferencesFragment;
 public final class PreferencesActivity extends AppCompatActivity {
 
     @Override
-    public void onCreate(final @Nullable Bundle savedInstanceState) {
+    protected void onCreate(final @Nullable Bundle savedInstanceState) {
         EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
 
-        this.getSupportFragmentManager()
-            .beginTransaction()
-            .replace(R.id.main_container, new PreferencesFragment())
-            .commit();
+        if (savedInstanceState == null) {
+            this.getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.main_container, new PreferencesFragment())
+                .commit();
+        }
+
         this.setContentView(R.layout.activity_preferences);
     }
 }

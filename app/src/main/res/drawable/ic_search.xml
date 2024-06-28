@@ -6,7 +6,9 @@
     android:viewportWidth="513.7"
     android:viewportHeight="513.7"
     android:tint="?attr/colorIconTint">
+
     <path
         android:fillColor="@android:color/white"
         android:pathData="m504.4 459-99.5-99.4a224.9 224.9 0 1 0-45.3 45.3l99.5 99.5a32 32 0 1 0 45.3-45.3zm-278.7-73.3a160 160 0 1 1 0-320 160 160 0 0 1 0 320z" />
+
 </vector>

@@ -14,13 +14,13 @@
     <item
         android:id="@id/nav_products"
         android:icon="@drawable/ic_products"
-        app:buttonIcon="@drawable/ic_add"
+        app:buttonIcon="@drawable/ic_plus"
         app:buttonHandler=".ui.button.handler.AddProductButtonHandler" />
 
     <item
         android:id="@id/nav_people"
         android:icon="@drawable/ic_people"
-        app:buttonIcon="@drawable/ic_add"
+        app:buttonIcon="@drawable/ic_plus"
         app:buttonHandler=".ui.button.handler.PeopleButtonHandler" />
 
 </menu>

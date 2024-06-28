@@ -13,7 +13,7 @@
     <style name="Genero.Widget.ActionButton" parent="Base.Genero.Widget.ActionButton">
         <item name="color">?attr/colorSurfaceContainerHighest</item>
         <item name="rippleColor">@color/action_button_ripple</item>
-        <item name="icon">@drawable/ic_add</item>
+        <item name="icon">@drawable/ic_plus</item>
         <item name="iconTint">?attr/colorOnSurface</item>
     </style>
 
@@ -23,10 +23,11 @@
         <item name="android:background">?attr/colorSurface</item>
         <item name="titleCollapseMode">fade</item>
         <item name="layout_scrollFlags">scroll|exitUntilCollapsed|snap</item>
-        <item name="expandedTitleMarginStart">@dimen/ctl_title_margin</item>
-        <item name="expandedTitleMarginEnd">@dimen/ctl_title_margin</item>
-        <item name="expandedTitleMarginBottom">@dimen/ctl_title_margin</item>
-        <item name="expandedTitleMarginTop">@dimen/ctl_title_margin</item>
+        <item name="expandedTitleMarginStart">@dimen/ctl_title_margin_horizontal</item>
+        <item name="expandedTitleMarginEnd">@dimen/ctl_title_margin_horizontal</item>
+        <item name="expandedTitleMarginBottom">@dimen/ctl_title_margin_vertical</item>
+        <item name="expandedTitleMarginTop">@dimen/ctl_title_margin_vertical</item>
+        <item name="expandedTitleTextAppearance">@style/TextAppearance.AppCompat.Display1</item>
     </style>
 
     <!-- Preferences -->
@@ -39,12 +40,12 @@
         <item name="preferenceCategoryStyle">@style/Preference.Category.Genero</item>
         <item name="switchPreferenceStyle">@style/Preference.Switch.Genero</item>
         <item name="switchPreferenceCompatStyle">@style/Preference.Switch.Genero</item>
-        <item name="preferenceFragmentStyle">@style/Preference.Fragment.Genero</item>
-        <item name="preferenceFragmentCompatStyle">@style/Preference.Fragment.Genero</item>
     </style>
 
     <style name="Preference.Category.Genero" parent="Preference.Category.Material">
         <item name="android:layout">@layout/widget_preference_category</item>
+        <item name="allowDividerAbove">false</item>
+        <item name="allowDividerBelow">false</item>
         <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
     </style>
 
@@ -72,11 +73,6 @@
         <item name="android:layout">@layout/widget_preference</item>
         <item name="android:widgetLayout">@layout/widget_switch</item>
         <item name="iconSpaceReserved">@bool/preference_icon_space_reserved</item>
-    </style>
-
-    <style name="Preference.Fragment.Genero" parent="PreferenceFragment.Material">
-        <item name="allowDividerAfterLastItem">false</item>
-        <item name="android:divider">@null</item>
     </style>
 
 </resources>

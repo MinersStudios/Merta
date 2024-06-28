@@ -14,12 +14,13 @@
 
     <!-- Collapsing Toolbar Layout -->
 
-    <dimen name="ctl_title_margin">20dp</dimen>
+    <dimen name="ctl_title_margin_horizontal">24dp</dimen>
+    <dimen name="ctl_title_margin_vertical">32dp</dimen>
 
     <!-- Preferences -->
 
     <dimen name="preferences_status_bar_default_top_padding">24dp</dimen>
-    <dimen name="preferences_ctl_height">164dp</dimen>
+    <dimen name="preferences_ctl_height">180dp</dimen>
     <dimen name="preferences_toolbar_height">64dp</dimen>
     <dimen name="preferences_toolbar_indent">5dp</dimen>
     <dimen name="preference_category_margin_top">32dp</dimen>
