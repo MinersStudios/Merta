@@ -3,14 +3,14 @@
 
     <!-- BottomNavBar -->
 
-    <style name="Genero.Widget.BottomNavBar" parent="Base.Genero.Widget.BottomNavBar">
+    <style name="Widget.Genero.BottomNavBar" parent="Base.Widget.Genero.BottomNavBar">
         <item name="barColor">?attr/colorSurfaceContainerHighest</item>
         <item name="indicatorColor">?attr/colorOnSurface</item>
     </style>
 
     <!-- ActionButton -->
 
-    <style name="Genero.Widget.ActionButton" parent="Base.Genero.Widget.ActionButton">
+    <style name="Widget.Genero.ActionButton" parent="Base.Widget.Genero.ActionButton">
         <item name="color">?attr/colorSurfaceContainerHighest</item>
         <item name="rippleColor">@color/action_button_ripple</item>
         <item name="icon">@drawable/ic_plus</item>
@@ -19,7 +19,7 @@
 
     <!-- CollapsingToolbarLayout -->
 
-    <style name="Genero.Widget.CollapsingToolbarLayout" parent="Widget.Material3.CollapsingToolbar.Large">
+    <style name="Widget.Genero.CollapsingToolbarLayout" parent="Widget.Material3.CollapsingToolbar.Large">
         <item name="android:background">?attr/colorSurface</item>
         <item name="titleCollapseMode">fade</item>
         <item name="layout_scrollFlags">scroll|exitUntilCollapsed|snap</item>

@@ -55,7 +55,7 @@ public class ActionButton extends View implements Shapeable {
     private MaterialShapeDrawable mBorderDrawable;
     private RippleDrawable mRippleDrawable;
 
-    private static final int DEFAULT_STYLE = R.style.Base_Genero_Widget_ActionButton;
+    private static final int DEFAULT_STYLE = R.style.Base_Widget_Genero_ActionButton;
 
     /**
      * Creates a new action button

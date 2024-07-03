@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<com.minersstudios.genero.lib.ui.bottomsheet.ModalBottomSheetLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/content"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="20dp"
@@ -15,18 +14,18 @@
         android:layout_height="wrap_content" />
 
     <androidx.core.widget.NestedScrollView
-        android:scrollbars="none"
         android:id="@+id/license_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
 
         <TextView
             android:id="@+id/license_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:text="@string/app_license" />
+            android:text="@string/app_license"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     </androidx.core.widget.NestedScrollView>
 
-</LinearLayout>
+</com.minersstudios.genero.lib.ui.bottomsheet.ModalBottomSheetLayout>

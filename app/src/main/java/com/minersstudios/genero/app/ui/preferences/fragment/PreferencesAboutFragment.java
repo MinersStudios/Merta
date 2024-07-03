@@ -8,11 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.minersstudios.genero.app.R;
-import com.minersstudios.genero.app.ui.fragment.BottomSheetLicenseFragment;
-import com.minersstudios.genero.lib.util.EdgeToEdgeUtil;
+import com.minersstudios.genero.lib.ui.bottomsheet.ModalBottomSheetFragment;
 
 public class PreferencesAboutFragment extends AbstractPreferencesFragment {
 
@@ -50,9 +47,10 @@ public class PreferencesAboutFragment extends AbstractPreferencesFragment {
         @Override
         public boolean onPreferenceTreeClick(final @NonNull Preference preference) {
             if (this.keyLicense.equals(preference.getKey())) {
-                new BottomSheetLicenseFragment().show(
+                new ModalBottomSheetFragment(R.layout.bottom_sheet_app_license)
+                .show(
                         this.getParentFragmentManager(),
-                        "LicenseDialogFragment"
+                        "LicenseBottomSheetFragment"
                 );
             }
 

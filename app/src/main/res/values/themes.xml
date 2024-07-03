@@ -7,6 +7,7 @@
         <item name="android:statusBarColor">?attr/colorSurface</item>
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
         <item name="android:windowLightNavigationBar">?attr/isLightTheme</item>
+        <item name="enableEdgeToEdge">false</item>
     </style>
 
     <style name="Theme.Genero" parent="Base.Theme.Genero">

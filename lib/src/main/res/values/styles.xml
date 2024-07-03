@@ -6,7 +6,7 @@
         <item name="cornerSize">100%</item>
     </style>
 
-    <style name="Base.Genero.Widget.BottomNavBar" parent="">
+    <style name="Base.Widget.Genero.BottomNavBar" parent="">
         <item name="barColor">@color/bnb_bar</item>
         <item name="barRadius">@dimen/bnb_bar_radius</item>
         <item name="barPadding">@dimen/bnb_bar_padding</item>
@@ -18,7 +18,7 @@
         <item name="interpolator">@android:anim/accelerate_decelerate_interpolator</item>
     </style>
 
-    <style name="Base.Genero.Widget.ActionButton" parent="">
+    <style name="Base.Widget.Genero.ActionButton" parent="">
         <item name="size">@dimen/action_button_size</item>
         <item name="color">@color/action_button_background</item>
         <item name="rippleColor">@color/action_button_ripple</item>
@@ -29,6 +29,12 @@
         <item name="animDuration">@integer/action_button_animation_duration</item>
         <item name="interpolator">@android:anim/accelerate_decelerate_interpolator</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Genero.Circular</item>
+    </style>
+
+    <style name="Base.Widget.Genero.ModalBottomSheet" parent="">
+        <item name="hideable">true</item>
+        <item name="peekHeight">auto</item>
+        <item name="shouldRemoveExpandedCorners">false</item>
     </style>
 
 </resources>

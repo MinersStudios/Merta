@@ -27,7 +27,7 @@
         android:paddingBottom="@dimen/nav_bar_indent">
 
         <com.minersstudios.genero.lib.ui.navigation.BottomNavBar
-            style="@style/Genero.Widget.BottomNavBar"
+            style="@style/Widget.Genero.BottomNavBar"
             android:id="@+id/bottom_nav_bar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.minersstudios.genero.lib.ui.button.ActionButton
-            style="@style/Genero.Widget.ActionButton"
+            style="@style/Widget.Genero.ActionButton"
             android:id="@+id/bottom_button"
             android:layout_width="wrap_content"
             android:layout_height="0dp"

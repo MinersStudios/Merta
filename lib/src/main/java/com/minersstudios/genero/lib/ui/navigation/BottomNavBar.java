@@ -89,7 +89,7 @@ public class BottomNavBar extends View {
     private static final String BUTTON_HANDLER_ATTRIBUTE =   "buttonHandler";
 
     private static final int INVALID_RES = -1;
-    private static final int DEFAULT_STYLE = R.style.Base_Genero_Widget_BottomNavBar;
+    private static final int DEFAULT_STYLE = R.style.Base_Widget_Genero_BottomNavBar;
     //</editor-fold>
 
     /**

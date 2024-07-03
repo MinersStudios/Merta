@@ -11,7 +11,7 @@
         android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            style="@style/Genero.Widget.CollapsingToolbarLayout"
+            style="@style/Widget.Genero.CollapsingToolbarLayout"
             android:id="@+id/collapsing_toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/preferences_ctl_height"

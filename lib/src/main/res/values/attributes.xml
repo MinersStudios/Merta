@@ -54,4 +54,35 @@
         <attr name="buttonHandler"  format="string" />
     </declare-styleable>
 
+    <declare-styleable name="ModalBottomSheetLayout">
+        <attr name="state" format="integer">
+            <enum name="expanded"      value="3" />
+            <enum name="half_expanded" value="6" />
+            <enum name="collapsed"     value="4" />
+        </attr>
+        <attr name="saveFlags" format="integer">
+            <flag name="all"             value="-1" />
+            <flag name="none"            value="0" />
+            <flag name="peek_height"     value="1" />
+            <flag name="fit_to_contents" value="2" />
+            <flag name="hideable"        value="4" />
+            <flag name="skip_collapsed"  value="8" />
+        </attr>
+        <attr name="peekHeight" format="dimension">
+            <enum name="auto" value="-1" />
+        </attr>
+        <attr name="expandedOffset"                            format="dimension" />
+        <attr name="significantVelocityThreshold"              format="integer" />
+        <attr name="halfExpandedRatio"                         format="float" />
+        <attr name="hideFriction"                              format="float" />
+        <attr name="hideable"                                  format="boolean" />
+        <attr name="draggable"                                 format="boolean" />
+        <attr name="enableEdgeToEdge"                          format="boolean" />
+        <attr name="fitToContents"                             format="boolean" />
+        <attr name="skipCollapsed"                             format="boolean" />
+        <attr name="gestureInsetBottomIgnored"                 format="boolean" />
+        <attr name="shouldRemoveExpandedCorners"               format="boolean" />
+        <attr name="updateImportantForAccessibilityOnSiblings" format="boolean" />
+    </declare-styleable>
+
 </resources>
