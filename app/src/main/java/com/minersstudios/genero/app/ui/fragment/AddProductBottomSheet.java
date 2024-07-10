@@ -6,6 +6,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.minersstudios.genero.app.R;
 import com.minersstudios.genero.lib.ui.bottomsheet.ModalBottomSheetFragment;
+import com.minersstudios.genero.lib.ui.bottomsheet.ModalBottomSheetLayout;
 
 public class AddProductBottomSheet extends ModalBottomSheetFragment {
 
@@ -21,16 +22,25 @@ public class AddProductBottomSheet extends ModalBottomSheetFragment {
     public void onStart() {
         super.onStart();
 
-        this.requireModal()
-            .requireBottomContainer()
-            .requireViewById(R.id.cancel_button)
-            .setOnClickListener(
-                    view -> {
-                        final BottomSheetDialog dialog = (BottomSheetDialog) this.requireDialog();
-                        final BottomSheetBehavior<?> behavior = dialog.getBehavior();
+        final BottomSheetDialog dialog = (BottomSheetDialog) this.requireDialog();
+        final BottomSheetBehavior<?> behavior = dialog.getBehavior();
+        final ModalBottomSheetLayout modal = this.requireModal();
+        final ModalBottomSheetLayout.BottomLayout bottomContainer = modal.requireBottomContainer();
 
-                        behavior.handleBackInvoked();
-                    }
-            );
+        bottomContainer
+        .requireViewById(R.id.cancel_button)
+        .setOnClickListener(view -> {
+            behavior.handleBackInvoked();
+
+            // TODO : Add cancel logic
+        });
+
+        bottomContainer
+        .requireViewById(R.id.confirm_button)
+        .setOnClickListener(view -> {
+            behavior.handleBackInvoked();
+
+            // TODO : Add product logic
+        });
     }
 }
