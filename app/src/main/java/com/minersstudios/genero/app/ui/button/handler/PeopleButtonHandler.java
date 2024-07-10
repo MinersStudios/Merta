@@ -11,16 +11,20 @@ import com.minersstudios.genero.lib.ui.button.ButtonHandler;
 public class PeopleButtonHandler implements ButtonHandler {
 
     @Override
-    public void onClick(final @NonNull ActionButton view) {
+    public boolean onClick(final @NonNull ActionButton view) {
         Log.d("PeopleButtonHandler", "onClick: PeopleButtonHandler clicked!");
+
+        return true;
     }
 
     @Override
-    public void onTouch(
+    public boolean onTouch(
             final @NonNull ActionButton view,
             final @NonNull MotionEvent event
     ) {
         Log.d("PeopleButtonHandler", "onTouch: PeopleButtonHandler touched!");
+
+        return true;
     }
 
     @Override

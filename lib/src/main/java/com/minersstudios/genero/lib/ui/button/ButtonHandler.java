@@ -16,8 +16,11 @@ public interface ButtonHandler {
      *              enable this method.
      *
      * @param button The button that was clicked
+     * @return True if the click event was consumed, false otherwise
      */
-    default void onClick(final @NonNull ActionButton button) {}
+    default boolean onClick(final @NonNull ActionButton button) {
+        return false;
+    }
 
     /**
      * Called when a button has been long clicked.
@@ -27,11 +30,14 @@ public interface ButtonHandler {
      *
      * @param button The button that was long clicked
      * @param event  The motion event that triggered this method
+     * @return True if the touch event was consumed, false otherwise
      */
-    default void onTouch(
+    default boolean onTouch(
             final @NonNull ActionButton button,
             final @NonNull MotionEvent event
-    ) {}
+    ) {
+        return false;
+    }
 
     /**
      * Returns whether the button is clickable and should trigger the

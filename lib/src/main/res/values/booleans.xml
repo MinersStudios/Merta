@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ModalBottomSheetLayout -->
+
+    <bool name="modal_bottom_sheet_hideable">true</bool>
+    <bool name="modal_bottom_sheet_draggable">true</bool>
+    <bool name="modal_bottom_sheet_enable_edge_to_edge">true</bool>
+    <bool name="modal_bottom_sheet_fit_to_contents">true</bool>
+    <bool name="modal_bottom_sheet_skip_collapsed">false</bool>
+    <bool name="modal_bottom_sheet_gesture_inset_bottom_ignored">false</bool>
+    <bool name="modal_bottom_sheet_should_remove_expanded_corners">false</bool>
+    <bool name="modal_bottom_sheet_update_important_for_accessibility_on_siblings">false</bool>
+    <bool name="modal_bottom_sheet_cancel_on_touch_outside">true</bool>
+
+</resources>

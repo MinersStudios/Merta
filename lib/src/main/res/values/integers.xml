@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Start BottomNavBar -->
+    <!-- BottomNavBar -->
 
     <integer name="bnb_animation_duration">250</integer>
 
-    <!-- End BottomNavBar -->
-
-    <!-- Start ActionButton -->
+    <!-- ActionButton -->
 
     <integer name="action_button_animation_duration">400</integer>
 
-    <!-- End ActionButton -->
+    <!-- ModalBottomSheetLayout -->
+
+    <integer name="modal_bottom_sheet_significant_velocity_threshold">500</integer>
+
 </resources>

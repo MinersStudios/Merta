@@ -1,7 +1,6 @@
 package com.minersstudios.genero.lib.ui.button;
 
 import static android.view.MotionEvent.ACTION_DOWN;
-import static android.view.MotionEvent.ACTION_UP;
 import static android.view.animation.Animation.RELATIVE_TO_SELF;
 
 import static com.minersstudios.genero.lib.ui.button.ButtonParamHolder.INVALID;
@@ -831,35 +830,31 @@ public class ActionButton extends View implements Shapeable {
         ) {
             this.playSoundEffect(SoundEffectConstants.CLICK);
             this.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CLICKED);
-            handler.onClick(this);
 
-            return true;
+            return handler.onClick(this);
         }
 
         return super.performClick();
     }
 
+    @SuppressWarnings("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(final @NonNull MotionEvent event) {
-        switch (event.getAction()) {
-            case ACTION_DOWN:
-                this.performHapticFeedback(0);
-                break;
-            case ACTION_UP:
-                this.performClick();
-                break;
-        }
-
         final ButtonHandler handler = this.getButtonHandler();
+        boolean clicked = super.onTouchEvent(event);
 
         if (
                 handler != null
                 && handler.isTouchable()
         ) {
-            handler.onTouch(this, event);
+            clicked |= handler.onTouch(this, event);
         }
 
-        return super.onTouchEvent(event);
+        if (event.getAction() == ACTION_DOWN) {
+            this.performHapticFeedback(0);
+        }
+
+        return clicked;
     }
 
     @Override

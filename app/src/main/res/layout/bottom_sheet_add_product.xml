@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.minersstudios.genero.lib.ui.bottomsheet.ModalBottomSheetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:widthMax="match_parent"
+    app:heightMax="750dp"
+    app:dismissOffset="-0.9"
+    app:state="expanded"
+    app:skipCollapsed="true"
+    app:draggable="false"
+    app:cancelOnTouchOutside="false"
+    app:bottomView="@layout/widget_add_product_button_container"
+    tools:context=".ui.fragment.AddProductBottomSheet">
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Create a new product"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="750dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:orientation="vertical">
+
+            <!-- TODO: Add views -->
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</com.minersstudios.genero.lib.ui.bottomsheet.ModalBottomSheetLayout>

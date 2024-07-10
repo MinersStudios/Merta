@@ -13,6 +13,8 @@
     <string name="title_appearance">Зовнішній вигляд</string>
     <string name="title_about">Про додаток</string>
     <string name="title_license">Ліцензія</string>
+    <string name="title_cancel">Скасувати</string>
+    <string name="title_confirm">Підтвердити</string>
     <string name="summary_appearance">Налаштування зовнішнього вигляду додатка</string>
     <string name="summary_about">Інформація про додаток</string>
     <string name="unknown">Невідомо</string>

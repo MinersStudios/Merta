@@ -85,13 +85,13 @@ abstract class XmlTagImpl implements XmlTag {
 
     @Override
     public @NonNull String toString() throws IllegalStateException {
-        return "XmlTag{" +
+        return this.getClass().getSimpleName() + '{' +
                 "type=" + this.getType() +
                 ", depth=" + this.getDepth() +
                 ", lineNumber=" + this.getLineNumber() +
                 ", columnNumber=" + this.getColumnNumber() +
                 ", positionDescription='" + this.getPositionDescription() + '\'' +
-                "}";
+                '}';
     }
 
     @Override

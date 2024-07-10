@@ -19,7 +19,6 @@
 
     <!-- Preferences -->
 
-    <dimen name="preferences_status_bar_default_top_padding">24dp</dimen>
     <dimen name="preferences_ctl_height">180dp</dimen>
     <dimen name="preferences_toolbar_height">64dp</dimen>
     <dimen name="preferences_toolbar_indent">5dp</dimen>

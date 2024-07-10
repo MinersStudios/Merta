@@ -32,9 +32,22 @@
     </style>
 
     <style name="Base.Widget.Genero.ModalBottomSheet" parent="">
-        <item name="hideable">true</item>
-        <item name="peekHeight">auto</item>
-        <item name="shouldRemoveExpandedCorners">false</item>
+        <item name="android:orientation">vertical</item>
+        <item name="widthMax">@dimen/modal_bottom_sheet_max_width</item>
+        <item name="expandedOffset">@dimen/modal_bottom_sheet_expanded_offset</item>
+        <item name="significantVelocityThreshold">@integer/modal_bottom_sheet_significant_velocity_threshold</item>
+        <item name="halfExpandedRatio">@dimen/modal_bottom_sheet_half_expanded_ratio</item>
+        <item name="hideFriction">@dimen/modal_bottom_sheet_hide_friction</item>
+        <item name="dismissOffset">@dimen/modal_bottom_sheet_dismiss_offset</item>
+        <item name="hideable">@bool/modal_bottom_sheet_hideable</item>
+        <item name="draggable">@bool/modal_bottom_sheet_draggable</item>
+        <item name="enableEdgeToEdge">@bool/modal_bottom_sheet_enable_edge_to_edge</item>
+        <item name="fitToContents">@bool/modal_bottom_sheet_fit_to_contents</item>
+        <item name="skipCollapsed">@bool/modal_bottom_sheet_skip_collapsed</item>
+        <item name="gestureInsetBottomIgnored">@bool/modal_bottom_sheet_gesture_inset_bottom_ignored</item>
+        <item name="shouldRemoveExpandedCorners">@bool/modal_bottom_sheet_should_remove_expanded_corners</item>
+        <item name="updateImportantForAccessibilityOnSiblings">@bool/modal_bottom_sheet_update_important_for_accessibility_on_siblings</item>
+        <item name="cancelOnTouchOutside">@bool/modal_bottom_sheet_cancel_on_touch_outside</item>
     </style>
 
 </resources>

@@ -1,28 +1,42 @@
 package com.minersstudios.genero.lib.ui.bottomsheet;
 
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static com.google.android.material.bottomsheet.BottomSheetBehavior.*;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
+import android.view.*;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import androidx.annotation.*;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.minersstudios.genero.lib.R;
+import com.minersstudios.genero.lib.util.EdgeToEdgeUtil;
 
 /**
- * Represents a layout that can be used as the root of a
+ * Represents a modal bottom sheet layout that should be used as the root of a
  * {@link ModalBottomSheetFragment}
  *
  * @see ModalBottomSheetFragment
  * @noinspection unused
  */
 public class ModalBottomSheetLayout extends LinearLayout {
+    private BottomLayout mBottomContainer;
+
+    //<editor-fold desc="Styleable attributes" defaultstate="collapsed">
+    private int mMaxWidth;
+    private int mMaxHeight;
     private @StableState int mState;
     private @SaveFlags int mSaveFlags;
     private int mPeekHeight;
@@ -30,6 +44,7 @@ public class ModalBottomSheetLayout extends LinearLayout {
     private int mSignificantVelocityThreshold;
     private float mHalfExpandedRatio;
     private float mHideFriction;
+    private float mDismissOffset;
     private boolean mHideable;
     private boolean mDraggable;
     private boolean mEnableEdgeToEdge;
@@ -38,22 +53,15 @@ public class ModalBottomSheetLayout extends LinearLayout {
     private boolean mGestureInsetBottomIgnored;
     private boolean mShouldRemoveExpandedCorners;
     private boolean mUpdateImportantForAccessibilityOnSiblings;
+    private boolean mCancelOnTouchOutside;
+    private @LayoutRes int mBottomViewResId;
+    //</editor-fold>
 
     //<editor-fold desc="Default attribute values" defaultstate="collapsed">
-    public static final int DEFAULT_EXPANDED_OFFSET = 0;             // from BottomSheetBehavior
     public static final int DEFAULT_SIGNIFICANT_VEL_THRESHOLD = 500; // BottomSheetBehavior.DEFAULT_SIGNIFICANT_VEL_THRESHOLD
-
-    public static final float DEFAULT_HALF_EXPANDED_RATIO = 0.5f; // from BottomSheetBehavior
-    public static final float HIDE_FRICTION = 0.1f;               // BottomSheetBehavior.HIDE_FRICTION
-
-    public static final boolean DEFAULT_HIDEABLE = false;                                       // from BottomSheetBehavior
-    public static final boolean DEFAULT_DRAGGABLE = true;                                       // from BottomSheetBehavior
-    public static final boolean DEFAULT_EDGE_TO_EDGE = false;
-    public static final boolean DEFAULT_FIT_TO_CONTENTS = true;                                 // from BottomSheetBehavior
-    public static final boolean DEFAULT_SKIP_COLLAPSED = false;                                 // from BottomSheetBehavior
-    public static final boolean DEFAULT_GESTURE_INSET_BOTTOM_IGNORED = false;                   // from BottomSheetBehavior
-    public static final boolean DEFAULT_SHOULD_REMOVE_EXPANDED_CORNERS = true;                  // from BottomSheetBehavior
-    public static final boolean DEFAULT_UPDATE_IMPORTANT_FOR_ACCESSIBILITY_ON_SIBLINGS = false; // from BottomSheetBehavior
+    public static final float DEFAULT_HALF_EXPANDED_RATIO = 0.5f;    // from BottomSheetBehavior
+    public static final float HIDE_FRICTION = 0.1f;                  // BottomSheetBehavior.HIDE_FRICTION
+    public static final float DISMISS_OFFSET = -0.95f;
     //</editor-fold>
 
     private static final int DEFAULT_STYLE = R.style.Base_Widget_Genero_ModalBottomSheet;
@@ -103,36 +111,128 @@ public class ModalBottomSheetLayout extends LinearLayout {
                         defStyleAttr,
                         DEFAULT_STYLE
                 );
-        final TypedValue peekHeightValue =     typedArray.peekValue(R.styleable.ModalBottomSheetLayout_peekHeight);
-        final TypedValue expandedOffsetValue = typedArray.peekValue(R.styleable.ModalBottomSheetLayout_expandedOffset);
+        TypedValue value;
 
+        value = typedArray.peekValue(R.styleable.ModalBottomSheetLayout_widthMax);
+        this.setMaxWidth(
+                value != null
+                && value.data == MATCH_PARENT
+                ? value.data
+                : typedArray.getDimensionPixelSize(R.styleable.ModalBottomSheetLayout_widthMax, MATCH_PARENT)
+        );
+
+        value = typedArray.peekValue(R.styleable.ModalBottomSheetLayout_heightMax);
+        this.setMaxHeight(
+                value != null
+                && value.data == MATCH_PARENT
+                ? value.data
+                : typedArray.getDimensionPixelSize(R.styleable.ModalBottomSheetLayout_heightMax, MATCH_PARENT)
+        );
+
+        value = typedArray.peekValue(R.styleable.ModalBottomSheetLayout_peekHeight);
         this.setPeekHeight(
-                peekHeightValue != null
-                && peekHeightValue.data == PEEK_HEIGHT_AUTO
-                ? peekHeightValue.data
+                value != null
+                && value.data == PEEK_HEIGHT_AUTO
+                ? value.data
                 : typedArray.getDimensionPixelSize(R.styleable.ModalBottomSheetLayout_peekHeight, PEEK_HEIGHT_AUTO)
         );
-        this.setExpandedOffset(
-                expandedOffsetValue != null
-                && expandedOffsetValue.data == TypedValue.TYPE_FIRST_INT
-                ? expandedOffsetValue.data
-                : typedArray.getDimensionPixelSize(R.styleable.ModalBottomSheetLayout_expandedOffset, DEFAULT_EXPANDED_OFFSET)
-        );
-        this.setState(                                    typedArray.getInt(    R.styleable.ModalBottomSheetLayout_state,                                     STATE_COLLAPSED));
-        this.setSaveFlags(                                typedArray.getInt(    R.styleable.ModalBottomSheetLayout_saveFlags,                                 SAVE_NONE));
-        this.setSignificantVelocityThreshold(             typedArray.getInt(    R.styleable.ModalBottomSheetLayout_significantVelocityThreshold,              DEFAULT_SIGNIFICANT_VEL_THRESHOLD));
-        this.setHalfExpandedRatio(                        typedArray.getFloat(  R.styleable.ModalBottomSheetLayout_halfExpandedRatio,                         DEFAULT_HALF_EXPANDED_RATIO));
-        this.setHideFriction(                             typedArray.getFloat(  R.styleable.ModalBottomSheetLayout_hideFriction,                              HIDE_FRICTION));
-        this.setHideable(                                 typedArray.getBoolean(R.styleable.ModalBottomSheetLayout_hideable,                                  DEFAULT_HIDEABLE));
-        this.setDraggable(                                typedArray.getBoolean(R.styleable.ModalBottomSheetLayout_draggable,                                 DEFAULT_DRAGGABLE));
-        this.setEdgeToEdgeEnabled(                        typedArray.getBoolean(R.styleable.ModalBottomSheetLayout_enableEdgeToEdge,                          DEFAULT_EDGE_TO_EDGE));
-        this.setFitToContents(                            typedArray.getBoolean(R.styleable.ModalBottomSheetLayout_fitToContents,                             DEFAULT_FIT_TO_CONTENTS));
-        this.setSkipCollapsed(                            typedArray.getBoolean(R.styleable.ModalBottomSheetLayout_skipCollapsed,                             DEFAULT_SKIP_COLLAPSED));
-        this.setGestureInsetBottomIgnored(                typedArray.getBoolean(R.styleable.ModalBottomSheetLayout_gestureInsetBottomIgnored,                 DEFAULT_GESTURE_INSET_BOTTOM_IGNORED));
-        this.setShouldRemoveExpandedCorners(              typedArray.getBoolean(R.styleable.ModalBottomSheetLayout_shouldRemoveExpandedCorners,               DEFAULT_SHOULD_REMOVE_EXPANDED_CORNERS));
-        this.setUpdateImportantForAccessibilityOnSiblings(typedArray.getBoolean(R.styleable.ModalBottomSheetLayout_updateImportantForAccessibilityOnSiblings, DEFAULT_UPDATE_IMPORTANT_FOR_ACCESSIBILITY_ON_SIBLINGS));
 
+        value = typedArray.peekValue(R.styleable.ModalBottomSheetLayout_expandedOffset);
+        this.setExpandedOffset(
+                value != null
+                && value.data == TypedValue.TYPE_FIRST_INT
+                ? value.data
+                : typedArray.getDimensionPixelSize(R.styleable.ModalBottomSheetLayout_expandedOffset, 0)
+        );
+
+        this.setState(                                    typedArray.getInt(       R.styleable.ModalBottomSheetLayout_state,                                     STATE_COLLAPSED));
+        this.setSaveFlags(                                typedArray.getInt(       R.styleable.ModalBottomSheetLayout_saveFlags,                                 SAVE_NONE));
+        this.setSignificantVelocityThreshold(             typedArray.getInt(       R.styleable.ModalBottomSheetLayout_significantVelocityThreshold,              DEFAULT_SIGNIFICANT_VEL_THRESHOLD));
+        this.setHalfExpandedRatio(                        typedArray.getFloat(     R.styleable.ModalBottomSheetLayout_halfExpandedRatio,                         DEFAULT_HALF_EXPANDED_RATIO));
+        this.setHideFriction(                             typedArray.getFloat(     R.styleable.ModalBottomSheetLayout_hideFriction,                              HIDE_FRICTION));
+        this.setDismissOffset(                            typedArray.getFloat(     R.styleable.ModalBottomSheetLayout_dismissOffset,                             DISMISS_OFFSET));
+        this.setHideable(                                 typedArray.getBoolean(   R.styleable.ModalBottomSheetLayout_hideable,                                  true));
+        this.setDraggable(                                typedArray.getBoolean(   R.styleable.ModalBottomSheetLayout_draggable,                                 true));
+        this.setEdgeToEdgeEnabled(                        typedArray.getBoolean(   R.styleable.ModalBottomSheetLayout_enableEdgeToEdge,                          true));
+        this.setFitToContents(                            typedArray.getBoolean(   R.styleable.ModalBottomSheetLayout_fitToContents,                             true));
+        this.setSkipCollapsed(                            typedArray.getBoolean(   R.styleable.ModalBottomSheetLayout_skipCollapsed,                             false));
+        this.setGestureInsetBottomIgnored(                typedArray.getBoolean(   R.styleable.ModalBottomSheetLayout_gestureInsetBottomIgnored,                 false));
+        this.setShouldRemoveExpandedCorners(              typedArray.getBoolean(   R.styleable.ModalBottomSheetLayout_shouldRemoveExpandedCorners,               false));
+        this.setUpdateImportantForAccessibilityOnSiblings(typedArray.getBoolean(   R.styleable.ModalBottomSheetLayout_updateImportantForAccessibilityOnSiblings, false));
+        this.setCancelOnTouchOutside(                     typedArray.getBoolean(   R.styleable.ModalBottomSheetLayout_cancelOnTouchOutside,                      true));
+        this.setBottomViewResId(                          typedArray.getResourceId(R.styleable.ModalBottomSheetLayout_bottomView,                                NO_ID));
         typedArray.recycle();
+
+        if (this.hasBottomView()) {
+            this.mBottomContainer = this.initBottomContainer();
+        }
+    }
+
+    /**
+     * Returns the bottom container view
+     *
+     * @return The bottom container view if {@link #hasBottomView()} is
+     *         {@code true} or null if it is called before
+     *         {@link ModalBottomSheetFragment#onCreateView(LayoutInflater, ViewGroup, Bundle)}
+     */
+    public @Nullable BottomLayout getBottomContainer() {
+        return this.mBottomContainer;
+    }
+
+    /**
+     * Returns the bottom container view
+     *
+     * @return The bottom container view
+     * @throws IllegalStateException If the bottom container is not set or this
+     *                               was called before
+     *                               {@link ModalBottomSheetFragment#onCreateView(LayoutInflater, ViewGroup, Bundle)}
+     */
+    public @NonNull BottomLayout requireBottomContainer() {
+        final BottomLayout bottomContainer = this.getBottomContainer();
+
+        if (bottomContainer == null) {
+            throw new IllegalStateException(
+                    "Fragment " + this + " did not have a specified bottom container or this was called before onStart()"
+            );
+        }
+
+        return bottomContainer;
+    }
+
+    /**
+     * Returns the maximum width of the bottom sheet
+     *
+     * @return The maximum width of the bottom sheet
+     */
+    public int getMaxWidth() {
+        return this.mMaxWidth;
+    }
+
+    /**
+     * Sets the maximum width of the bottom sheet
+     *
+     * @param maxWidth The maximum width of the bottom sheet
+     */
+    protected void setMaxWidth(final int maxWidth) {
+        this.mMaxWidth = maxWidth;
+    }
+
+    /**
+     * Returns the maximum height of the bottom sheet
+     *
+     * @return The maximum height of the bottom sheet
+     */
+    public int getMaxHeight() {
+        return this.mMaxHeight;
+    }
+
+    /**
+     * Sets the maximum height of the bottom sheet
+     *
+     * @param maxHeight The maximum height of the bottom sheet
+     */
+    protected void setMaxHeight(final int maxHeight) {
+        this.mMaxHeight = maxHeight;
     }
 
     /**
@@ -295,6 +395,24 @@ public class ModalBottomSheetLayout extends LinearLayout {
      */
     protected void setHideFriction(final float hideFriction) {
         this.mHideFriction = hideFriction;
+    }
+
+    /**
+     * Returns the offset to dismiss the bottom sheet
+     *
+     * @return The offset to dismiss the bottom sheet
+     */
+    public @FloatRange(from = -1.0f, to = 0.0f, fromInclusive = false, toInclusive = false) float getDismissOffset() {
+        return this.mDismissOffset;
+    }
+
+    /**
+     * Sets the offset to dismiss the bottom sheet
+     *
+     * @param dismissOffset The offset to dismiss the bottom sheet
+     */
+    protected void setDismissOffset(final @FloatRange(from = -1.0f, to = 0.0f, fromInclusive = false, toInclusive = false) float dismissOffset) {
+        this.mDismissOffset = dismissOffset;
     }
 
     /**
@@ -487,5 +605,300 @@ public class ModalBottomSheetLayout extends LinearLayout {
      */
     protected void setUpdateImportantForAccessibilityOnSiblings(final boolean state) {
         this.mUpdateImportantForAccessibilityOnSiblings = state;
+    }
+
+    /**
+     * Returns whether the bottom sheet should be dismissed when touched outside
+     * of the bottom sheet
+     *
+     * @return Whether the bottom sheet should be dismissed when touched outside
+     *         of the bottom sheet
+     */
+    public boolean isCancelOnTouchOutside() {
+        return this.mCancelOnTouchOutside;
+    }
+
+    /**
+     * Sets whether the bottom sheet should be dismissed when touched outside of
+     * the bottom sheet
+     *
+     * @param state Whether the bottom sheet should be dismissed when touched
+     *              outside of the bottom sheet
+     */
+    protected void setCancelOnTouchOutside(final boolean state) {
+        this.mCancelOnTouchOutside = state;
+    }
+
+    /**
+     * Returns the view resource ID of the bottom sheet
+     *
+     * @return The view resource ID of the bottom sheet
+     */
+    public @LayoutRes int getBottomViewResId() {
+        return this.mBottomViewResId;
+    }
+
+    /**
+     * Sets the view resource ID of the bottom sheet
+     *
+     * @param bottomViewResId The view resource ID of the bottom sheet
+     */
+    protected void setBottomViewResId(final @LayoutRes int bottomViewResId) {
+        this.mBottomViewResId = bottomViewResId;
+    }
+
+    /**
+     * Returns whether the bottom sheet has a bottom view
+     *
+     * @return Whether the bottom sheet has a bottom view
+     */
+    public boolean hasBottomView() {
+        return this.mBottomViewResId != NO_ID;
+    }
+
+    /**
+     * Applies the attributes of the modal bottom sheet layout to the bottom
+     * sheet dialog and its callback
+     *
+     * @param dialog   The bottom sheet dialog
+     * @param callback The callback of the bottom sheet dialog
+     */
+    public void applyAttributes(
+            final @NonNull BottomSheetDialog dialog,
+            final @Nullable ModalBottomSheetFragment.Callback callback
+    ) {
+        final BottomSheetBehavior<?> behavior = dialog.getBehavior();
+
+        behavior.setMaxWidth(this.getMaxWidth());
+        behavior.setMaxHeight(this.getMaxHeight());
+        behavior.setState(this.getState());
+        behavior.setSaveFlags(this.getSaveFlags());
+        behavior.setPeekHeight(this.getPeekHeight());
+        behavior.setExpandedOffset(this.getExpandedOffset());
+        behavior.setSignificantVelocityThreshold(this.getSignificantVelocityThreshold());
+        behavior.setHalfExpandedRatio(this.getHalfExpandedRatio());
+        behavior.setHideFriction(this.getHideFriction());
+        behavior.setHideable(this.isHideable());
+        behavior.setDraggable(this.isDraggable());
+        behavior.setFitToContents(this.isFitToContents());
+        behavior.setSkipCollapsed(this.isSkipCollapsed());
+        behavior.setGestureInsetBottomIgnored(this.isGestureInsetBottomIgnored());
+        behavior.setShouldRemoveExpandedCorners(this.isShouldRemoveExpandedCorners());
+        behavior.setUpdateImportantForAccessibilityOnSiblings(this.isUpdateImportantForAccessibilityOnSiblings());
+        dialog.setCanceledOnTouchOutside(this.isCancelOnTouchOutside());
+        this.applyEdgeToEdge(dialog);
+
+        if (callback != null) {
+            callback.setDismissOffset(this.getDismissOffset());
+        }
+    }
+
+    /**
+     * Shows the bottom container in the bottom sheet dialog.
+     * <br>
+     * <b>NOTE:</b> Should be called in {@link Fragment#onStart()} or an
+     * {@link IllegalStateException exception} will be thrown.
+     *
+     * @param dialog The bottom sheet dialog
+     * @throws IllegalStateException If the bottom sheet dialog is missing
+     *                               required views :
+     *                               {@code com.google.android.material.R.id.container}.
+     *                               <br>
+     *                               Usually thrown when this is called before
+     *                               {@link Fragment#onStart()}.
+     */
+    public void showBottomContainer(final @NonNull Dialog dialog) throws IllegalStateException {
+        final BottomLayout bottomContainer = this.getBottomContainer();
+
+        if (bottomContainer == null) {
+            Log.w(
+                    "ModalBottomSheetLayout",
+                    "Attempted to show bottom container, but it is not set"
+            );
+
+            return;
+        }
+
+        final FrameLayout container = dialog.findViewById(com.google.android.material.R.id.container);
+
+        if (container == null) {
+            throw new IllegalStateException(
+                    "BottomSheetDialog is missing required views (container)"
+            );
+        }
+
+        if (bottomContainer.getParent() == null) {
+            final View bottomView = bottomContainer.getChildAt(0);
+
+            if (bottomView == null) {
+                Log.w(
+                        "ModalBottomSheetLayout",
+                        "Bottom container does not have a child view, nothing to show"
+                );
+            } else {
+                this.applyInsets(bottomView, dialog.getWindow());
+                container.addView(bottomContainer);
+            }
+        }
+    }
+
+    private @NonNull BottomLayout initBottomContainer() {
+        final BottomLayout container = this.createBottomContainer();
+        final View bottomView =
+                LayoutInflater
+                .from(this.getContext())
+                .inflate(this.getBottomViewResId(), container, false);
+
+        container.addView(bottomView);
+        bottomView.post(
+                () -> this.setPadding(
+                        this.getPaddingLeft(),
+                        this.getPaddingTop(),
+                        this.getPaddingRight(),
+                        this.getPaddingBottom() + bottomView.getHeight()
+                )
+        );
+
+        return container;
+    }
+
+    private @NonNull BottomLayout createBottomContainer() {
+        final BottomLayout bottomContainer = new BottomLayout(this.getContext());
+        final BottomLayout.LayoutParams layoutParams =
+                new BottomLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                );
+
+        layoutParams.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
+
+        bottomContainer.setLayoutParams(layoutParams);
+        bottomContainer.setMaxWidth(this.getMaxWidth());
+
+        return bottomContainer;
+    }
+
+    private void applyEdgeToEdge(final @NonNull BottomSheetDialog dialog) {
+        final Window window = dialog.getWindow();
+
+        if (
+                window != null
+                && this.isEdgeToEdgeEnabled()
+        ) {
+            EdgeToEdgeUtil.apply(
+                    window,
+                    dialog.getEdgeToEdgeEnabled()
+            );
+        }
+    }
+
+    private void applyInsets(
+            final @NonNull View view,
+            final @Nullable Window window
+    ) {
+        if (window == null) {
+            return;
+        }
+
+        view.post(
+                () -> {
+                    final WindowInsets insets = window.getDecorView().getRootWindowInsets();
+                    final int left = insets.getSystemWindowInsetLeft();
+                    final int right = insets.getSystemWindowInsetRight();
+                    final int bottom = insets.getSystemWindowInsetBottom();
+
+                    view.setPadding(
+                            view.getPaddingLeft() + left,
+                            view.getPaddingTop(),
+                            view.getPaddingRight() + right,
+                            view.getPaddingBottom() + bottom
+                    );
+                }
+        );
+    }
+
+    public static final class BottomLayout extends FrameLayout {
+        private int mMaxWidth;
+        private int mMaxHeight;
+
+        public BottomLayout(final @NonNull Context context) {
+            super(context);
+        }
+
+        /**
+         * Returns the maximum width of the bottom container
+         *
+         * @return The maximum width of the bottom container
+         */
+        public int getMaxWidth() {
+            return this.mMaxWidth;
+        }
+
+        /**
+         * Sets the maximum width of the bottom container
+         *
+         * @param maxWidth The maximum width of the bottom container
+         */
+        public void setMaxWidth(final int maxWidth) {
+            this.mMaxWidth = maxWidth;
+        }
+
+        /**
+         * Returns the maximum height of the bottom container
+         *
+         * @return The maximum height of the bottom container
+         */
+        public int getMaxHeight() {
+            return this.mMaxHeight;
+        }
+
+        /**
+         * Sets the maximum height of the bottom container
+         *
+         * @param maxHeight The maximum height of the bottom container
+         */
+        public void setMaxHeight(final int maxHeight) {
+            this.mMaxHeight = maxHeight;
+        }
+
+        @Override
+        protected void onMeasure(
+                final int widthMeasureSpec,
+                final int heightMeasureSpec
+        ) {
+            final int maxedWidthMeasureSpec;
+            final int maxedHeightMeasureSpec;
+
+            if (this.mMaxWidth > 0) {
+                maxedWidthMeasureSpec =
+                        MeasureSpec.makeMeasureSpec(
+                                Math.min(
+                                        MeasureSpec.getSize(widthMeasureSpec),
+                                        this.mMaxWidth
+                                ),
+                                MeasureSpec.getMode(widthMeasureSpec)
+                        );
+            } else {
+                maxedWidthMeasureSpec = widthMeasureSpec;
+            }
+
+            if (this.mMaxHeight > 0) {
+                maxedHeightMeasureSpec =
+                        MeasureSpec.makeMeasureSpec(
+                                Math.min(
+                                        MeasureSpec.getSize(heightMeasureSpec),
+                                        this.mMaxHeight
+                                ),
+                                MeasureSpec.getMode(heightMeasureSpec)
+                        );
+            } else {
+                maxedHeightMeasureSpec = heightMeasureSpec;
+            }
+
+            super.onMeasure(
+                    maxedWidthMeasureSpec,
+                    maxedHeightMeasureSpec
+            );
+        }
     }
 }

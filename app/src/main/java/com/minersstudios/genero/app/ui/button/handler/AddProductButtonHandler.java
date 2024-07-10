@@ -1,35 +1,35 @@
 package com.minersstudios.genero.app.ui.button.handler;
 
-import android.util.Log;
-import android.view.MotionEvent;
+import android.content.Context;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 
+import com.minersstudios.genero.app.ui.fragment.AddProductBottomSheet;
 import com.minersstudios.genero.lib.ui.button.ActionButton;
 import com.minersstudios.genero.lib.ui.button.ButtonHandler;
 
 public class AddProductButtonHandler implements ButtonHandler {
 
     @Override
-    public void onClick(final @NonNull ActionButton view) {
-        Log.d("AddProductButtonHandler", "onClick: AddProductButtonHandler clicked!");
-    }
+    public boolean onClick(final @NonNull ActionButton view) {
+        final Context context = view.getContext();
 
-    @Override
-    public void onTouch(
-            final @NonNull ActionButton view,
-            final @NonNull MotionEvent event
-    ) {
-        Log.d("AddProductButtonHandler", "onTouch: AddProductButtonHandler touched!");
-    }
+        if (context instanceof FragmentActivity) {
+            final FragmentActivity activity = (FragmentActivity) context;
 
-    @Override
-    public boolean isClickable() {
+            new AddProductBottomSheet()
+            .show(
+                    activity.getSupportFragmentManager(),
+                    "AddProductBottomSheetFragment"
+            );
+        }
+
         return true;
     }
 
     @Override
-    public boolean isTouchable() {
+    public boolean isClickable() {
         return true;
     }
 }

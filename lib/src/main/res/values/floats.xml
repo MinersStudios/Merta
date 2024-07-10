@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ModalBottomSheetLayout -->
+
+    <item format="float" name="modal_bottom_sheet_half_expanded_ratio" type="dimen">0.5</item>
+    <item format="float" name="modal_bottom_sheet_hide_friction" type="dimen">0.1</item>
+    <item format="float" name="modal_bottom_sheet_dismiss_offset" type="dimen">-0.95</item>
+
+</resources>

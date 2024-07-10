@@ -12,7 +12,7 @@ import com.minersstudios.genero.app.ui.preferences.PreferencesActivity;
 public class SettingsButtonHandler implements ButtonHandler {
 
     @Override
-    public void onClick(final @NonNull ActionButton button) {
+    public boolean onClick(final @NonNull ActionButton button) {
         final Context context = button.getContext();
 
         if (context != null) {
@@ -21,9 +21,10 @@ public class SettingsButtonHandler implements ButtonHandler {
                             context,
                             PreferencesActivity.class
                     )
-                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             );
         }
+
+        return true;
     }
 
     @Override

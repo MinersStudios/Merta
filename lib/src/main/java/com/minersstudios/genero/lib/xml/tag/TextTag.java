@@ -71,7 +71,7 @@ public class TextTag extends XmlTagImpl {
 
     @Override
     public @NonNull String toString() throws IllegalStateException {
-        return "XmlTag{" +
+        return "TextTag{" +
                 "type=" + this.getType() +
                 ", depth=" + this.getDepth() +
                 ", lineNumber=" + this.getLineNumber() +

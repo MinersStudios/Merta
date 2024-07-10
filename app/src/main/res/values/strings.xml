@@ -26,13 +26,14 @@
     <string name="title_appearance">Appearance</string>
     <string name="title_about">About</string>
     <string name="title_license">License</string>
+    <string name="title_cancel">Cancel</string>
+    <string name="title_confirm">Confirm</string>
     <string name="summary_appearance">Application appearance settings</string>
     <string name="summary_about">Information about the application</string>
     <string name="summary_license" translatable="false">MIT License | Copyright © 2024 MinersStudios</string>
     <string name="unknown">Unknown</string>
 
-    <string name="app_license" translatable="false">
-        MIT License\n
+    <string name="app_license" translatable="false">MIT License\n
         \nCopyright © 2024 MinersStudios\n
         \nPermission is hereby granted, free of charge, to any person obtaining a copy
         of this software and associated documentation files (the "Software"), to deal

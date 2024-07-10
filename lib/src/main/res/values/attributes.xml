@@ -55,6 +55,12 @@
     </declare-styleable>
 
     <declare-styleable name="ModalBottomSheetLayout">
+        <attr name="widthMax" format="dimension">
+            <enum name="match_parent" value="-1" />
+        </attr>
+        <attr name="heightMax" format="dimension">
+            <enum name="match_parent" value="-1" />
+        </attr>
         <attr name="state" format="integer">
             <enum name="expanded"      value="3" />
             <enum name="half_expanded" value="6" />
@@ -75,6 +81,7 @@
         <attr name="significantVelocityThreshold"              format="integer" />
         <attr name="halfExpandedRatio"                         format="float" />
         <attr name="hideFriction"                              format="float" />
+        <attr name="dismissOffset"                             format="float" />
         <attr name="hideable"                                  format="boolean" />
         <attr name="draggable"                                 format="boolean" />
         <attr name="enableEdgeToEdge"                          format="boolean" />
@@ -83,6 +90,8 @@
         <attr name="gestureInsetBottomIgnored"                 format="boolean" />
         <attr name="shouldRemoveExpandedCorners"               format="boolean" />
         <attr name="updateImportantForAccessibilityOnSiblings" format="boolean" />
+        <attr name="cancelOnTouchOutside"                      format="boolean" />
+        <attr name="bottomView"                                format="reference" />
     </declare-styleable>
 
 </resources>
